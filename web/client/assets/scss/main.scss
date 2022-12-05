@@ -1,0 +1,60 @@
+@use "sass:map";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+// variables
+$clr : ( 
+  1 : #FF7D3E,
+  2 : #8C8C8C,
+  3 : #F1F1F1,
+  4 : #5F5F5F,
+  5 : #F5F5F5,
+  6 : #ff0000,
+  7: #ffffff
+);
+
+//color
+@for $i from 1 through 7 {  // every color listed in map will be available to use
+  .clr-#{$i} {
+    color: map.get($clr, $i);
+  }
+  .bg-clr-#{$i} {
+    background-color: map.get($clr, $i);
+  }
+}
+
+/* scrollbar css */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 128, 0.4);
+  border-radius: 8px;
+}
+
+// 
+table, th, td {
+  border: 2px solid #FF7D3E;
+}
+td {
+  padding: 10px 20px;
+}
+@media (max-width: 768px) {
+td {
+  padding: 5px 10px;
+}
+}
+
+//font-size
+.f1 {
+  font-family: 'Poppins', sans-serif;
+}
+
+// height
+.minh-full {
+  min-height: calc(100vh - 160px);
+}
+@media (max-width: 768px) {
+  .minh-full {
+    min-height: calc(100vh - 90px);
+  } 
+}
